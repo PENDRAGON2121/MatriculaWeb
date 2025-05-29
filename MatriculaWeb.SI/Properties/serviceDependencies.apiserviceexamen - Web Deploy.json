@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/apiserviceexamen/providers/Microsoft.ServiceLinker/linkers/connectionStringsDefaultConection_72B3388C28",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/exm-leng-2023/databases/Examen",
+      "type": "mssql.azure",
+      "connectionId": "connectionStrings:DefaultConection",
+      "dynamicId": null
+    }
+  }
+}

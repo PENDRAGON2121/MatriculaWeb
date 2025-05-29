@@ -1,0 +1,93 @@
+﻿@model MatriculaWeb.UI.Models.Estudiante
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        color: #333;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .details-container {
+        margin-bottom: 20px;
+    }
+
+        .details-container dl {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            grid-gap: 10px;
+        }
+
+        .details-container dt {
+            font-weight: bold;
+        }
+
+    .button-container {
+        margin-top: 20px;
+    }
+
+        .button-container a {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+            .button-container a:hover {
+                background-color: #0056b3;
+            }
+</style>
+
+<div class="container">
+    <h1>Detalles del Estudiante</h1>
+
+    <div class="details-container">
+        <h4>Estudiante</h4>
+        <dl>
+            <dt>Cédula</dt>
+            <dd>@Html.DisplayFor(model => model.Cedula)</dd>
+            <dt>Nombre</dt>
+            <dd>@Html.DisplayFor(model => model.Nombre)</dd>
+            <dt>Primer Apellido</dt>
+            <dd>@Html.DisplayFor(model => model.PrimerApellido)</dd>
+            <dt>Segundo Apellido</dt>
+            <dd>@Html.DisplayFor(model => model.SegundoApellido)</dd>
+            <dt>Fecha de Nacimiento</dt>
+            <dd>@Html.DisplayFor(model => model.FechaDeNacimiento)</dd>
+            <dt>Edad</dt>
+            <dd>@Html.DisplayFor(model => model.Edad)</dd>
+            <dt>Género</dt>
+            <dd>@Html.DisplayFor(model => model.Sexo)</dd>
+            <dt>Cédula de la Madre</dt>
+            <dd>@Html.DisplayFor(model => model.CedulaMadre)</dd>
+            <dt>Cédula del Padre</dt>
+            <dd>@Html.DisplayFor(model => model.CedulaPadre)</dd>
+        </dl>
+    </div>
+
+    <div class="button-container">
+        <a href="@Url.Action("Edit", new { id = Model.Id })">Editar Información</a>
+        <a asp-action="Index">Regresar al Registro</a>
+    </div>
+</div>

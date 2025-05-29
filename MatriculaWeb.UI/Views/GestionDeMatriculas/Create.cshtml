@@ -1,0 +1,77 @@
+﻿@model MatriculaWeb.UI.Models.Estudiante
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Nueva Matricula</h1>
+
+<h4>Estudiante</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Cedula" class="control-label">Cédula</label>
+                <input asp-for="Cedula" class="form-control" />
+                <span asp-validation-for="Cedula" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label">Nombre</label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrimerApellido" class="control-label">Primer Apellido</label>
+                <input asp-for="PrimerApellido" class="form-control" />
+                <span asp-validation-for="PrimerApellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SegundoApellido" class="control-label">Segundo Apellido</label>
+                <input asp-for="SegundoApellido" class="form-control" />
+                <span asp-validation-for="SegundoApellido" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Sexo" class="control-label">Genero</label>
+                <select asp-for="Sexo" class="form-control">
+                    <option value="1">Masculino</option>
+                    <option value="2">Femenino</option>
+                </select>
+                <span asp-validation-for="Sexo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FechaDeNacimiento" class="control-label">Fecha De Nacimiento</label>
+                <input asp-for="FechaDeNacimiento" class="form-control" />
+                <span asp-validation-for="FechaDeNacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CedulaMadre" class="control-label">Cedula De La Madre</label>
+                <input asp-for="CedulaMadre" class="form-control" />
+                <span asp-validation-for="CedulaMadre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CedulaPadre" class="control-label">Cedula Del Padre</label>
+                <input asp-for="CedulaPadre" class="form-control" />
+                <span asp-validation-for="CedulaPadre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear Registro" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar </a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

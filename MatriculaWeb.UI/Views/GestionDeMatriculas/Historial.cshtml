@@ -1,0 +1,150 @@
+﻿@model MatriculaWeb.UI.Models.Estudiante
+
+@{
+    ViewData["Title"] = "Historial";
+}
+
+<h1 style="color: #333; font-size: 24px; margin-bottom: 20px;">Historial</h1>
+
+<div>
+    <h4>Estudiante</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2" style="font-weight: bold;">@Html.DisplayNameFor(model => model.Nombre)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Nombre)</dd>
+        <dt class="col-sm-2" style="font-weight: bold;">@Html.DisplayNameFor(model => model.PrimerApellido)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.PrimerApellido)</dd>
+        <dt class="col-sm-2" style="font-weight: bold;">@Html.DisplayNameFor(model => model.SegundoApellido)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.SegundoApellido)</dd>
+    </dl>
+</div>
+
+<hr />
+
+<div>
+    <h4>INFORMACION DE LOS ABUELOS</h4>
+</div>
+<table class="table" style="margin-bottom: 20px;">
+    <thead>
+        <tr>
+            <th>Nombre Completo</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.historialFamiliar.ListaDeAbuelos)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.PrimerApellido)</td>
+                <td>@Html.DisplayFor(modelItem => item.SegundoApellido)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+
+<div>
+    <h4>INFORMACION DE LOS PADRES</h4>
+</div>
+<table class="table" style="margin-bottom: 20px;">
+    <thead>
+        <tr>
+            <th>Nombre Completo</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.historialFamiliar.ListaDePadres)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.PrimerApellido)</td>
+                <td>@Html.DisplayFor(modelItem => item.SegundoApellido)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+
+<div>
+    <h4>INFORMACION DE LOS TIOS</h4>
+</div>
+<table class="table" style="margin-bottom: 20px;">
+    <thead>
+        <tr>
+            <th>Nombre Completo</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.historialFamiliar.ListaDeTios)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.PrimerApellido)</td>
+                <td>@Html.DisplayFor(modelItem => item.SegundoApellido)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+
+<div>
+    <h4>INFORMACION DE LOS HIJOS</h4>
+</div>
+<table class="table" style="margin-bottom: 20px;">
+    <thead>
+        <tr>
+            <th>Nombre Completo</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.historialFamiliar.ListaDeHijos)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.PrimerApellido)</td>
+                <td>@Html.DisplayFor(modelItem => item.SegundoApellido)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+
+<div>
+    <h4>INFORMACION DE LOS HERMANOS</h4>
+</div>
+<table class="table" style="margin-bottom: 20px;">
+    <thead>
+        <tr>
+            <th>Nombre Completo</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.historialFamiliar.ListaDeHermanos)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.PrimerApellido)</td>
+                <td>@Html.DisplayFor(modelItem => item.SegundoApellido)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Edit" class="btn btn-primary" style="margin-right: 10px;">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Regresar al Registro</a>
+</div>
